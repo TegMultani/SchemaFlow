@@ -1,0 +1,88 @@
+/* ============================================
+   Relationship Edge
+   ============================================ */
+
+.relationship-edge__path {
+    stroke: var(--accent-indigo);
+    opacity: 0.6;
+    transition: stroke var(--transition-base), opacity var(--transition-base);
+}
+
+.relationship-edge__path--selected {
+    stroke: var(--accent-indigo);
+    opacity: 1;
+}
+
+.relationship-edge__hitbox:hover~.relationship-edge__path {
+    opacity: 1;
+    stroke: var(--accent-cyan);
+}
+
+.relationship-edge__glow {
+    opacity: 0.25;
+    filter: blur(4px);
+    stroke: var(--accent-indigo);
+}
+
+.relationship-edge__animated {
+    stroke: var(--accent-cyan);
+    stroke-dasharray: 6 4;
+    opacity: 0.4;
+    animation: edgeDash 1.5s linear infinite;
+}
+
+@keyframes edgeDash {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+.relationship-edge__label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+}
+
+.relationship-edge__label:hover,
+.relationship-edge__label--selected {
+    border-color: var(--accent-indigo);
+    color: var(--accent-indigo);
+    box-shadow: var(--shadow-glow);
+}
+
+.relationship-edge__type {
+    font-family: var(--font-mono);
+}
+
+.relationship-edge__delete {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background: var(--danger-dim);
+    color: var(--danger);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.relationship-edge__label:hover .relationship-edge__delete {
+    display: flex;
+}
+
+.relationship-edge__delete:hover {
+    background: var(--danger);
+    color: white;
+}

@@ -1,0 +1,134 @@
+/* ============================================
+   Diagram Canvas
+   ============================================ */
+
+.diagram-canvas {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+/* React Flow overrides */
+.diagram-canvas .react-flow {
+    background: var(--bg-primary) !important;
+}
+
+.diagram-canvas .react-flow__background {
+    opacity: 1;
+}
+
+/* Minimap */
+.diagram-canvas__minimap {
+    border: 1px solid var(--border-default) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.diagram-canvas__minimap .react-flow__minimap-mask {
+    fill: rgba(10, 14, 26, 0.85);
+}
+
+/* Controls */
+.diagram-canvas__controls {
+    border: 1px solid var(--border-default) !important;
+    border-radius: var(--radius-lg) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-md) !important;
+    background: transparent !important;
+}
+
+.diagram-canvas__controls .react-flow__controls-button {
+    background: var(--bg-secondary) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border-subtle) !important;
+    color: var(--text-secondary) !important;
+    width: 32px !important;
+    height: 32px !important;
+    transition: all var(--transition-fast);
+}
+
+.diagram-canvas__controls .react-flow__controls-button:hover {
+    background: var(--bg-surface) !important;
+    color: var(--text-primary) !important;
+}
+
+.diagram-canvas__controls .react-flow__controls-button:last-child {
+    border-bottom: none !important;
+}
+
+.diagram-canvas__controls .react-flow__controls-button svg {
+    fill: currentColor !important;
+}
+
+/* Connection line */
+.react-flow__connection-line {
+    stroke: var(--accent-indigo) !important;
+}
+
+/* Selection */
+.react-flow__selection {
+    background: var(--accent-indigo-dim) !important;
+    border: 1px solid var(--accent-indigo) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+/* Edge markers */
+.react-flow__edge-path {
+    stroke: var(--accent-indigo);
+}
+
+.react-flow__arrowhead polyline {
+    fill: var(--accent-indigo);
+    stroke: var(--accent-indigo);
+}
+
+/* Context Menu */
+.canvas-context-menu {
+    position: fixed;
+    z-index: 1000;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-1);
+    min-width: 180px;
+    animation: scaleIn var(--transition-fast) both;
+}
+
+.canvas-context-menu__btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: var(--space-2) var(--space-4);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.canvas-context-menu__btn:hover {
+    background: var(--bg-surface);
+}
+
+/* Connecting Toast indicator */
+.canvas-connecting-toast {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 38, 66, 0.9);
+    border: 1px solid var(--accent-indigo);
+    color: var(--text-primary);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    box-shadow: 0 0 20px rgba(129, 140, 248, 0.2);
+    z-index: 1000;
+    pointer-events: none;
+    animation: slideInUp 200ms ease both;
+}
