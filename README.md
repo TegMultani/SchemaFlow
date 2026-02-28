@@ -1,4 +1,4 @@
-# SchemaFlow 🚀
+# SchemaFlow
 
 A modern, collaborative database diagram modeling tool. Build your database schemas with a clean, dark-mode interface and sync them in real-time.
 
